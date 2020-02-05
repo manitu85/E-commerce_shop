@@ -1,0 +1,51 @@
+.menu-item {
+  min-width: 30%;
+  height: 24rem;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 0 .75rem 1.5rem;
+  background-position: center;
+  background-size: cover;
+
+  &.large {
+    height: 40rem;
+  }
+
+
+  &:first-child {
+    margin-right: .75rem;
+  }
+
+  &:last-child {
+    margin-left: .75rem;
+  }
+
+  .content {
+    height: 9rem;
+    padding: 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    color: #fff;
+    background-color: #000;
+    opacity: .75;
+
+    .title {
+      font-weight: bold;
+      margin-bottom: .6rem;
+      font-size: 22px;
+      color: currentColor;
+      letter-spacing: 2px;
+    }
+
+    .subtitle {
+      font-weight: lighter;
+      font-size: 1.6rem;
+    }
+  }
+}

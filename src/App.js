@@ -1,12 +1,10 @@
 import React from 'react'
-import HomePage from './pages/homepage.component.jsx'
+import HomePage from './pages/homepage.component'
 
 
 const  App = () => {
   return (
-    <div>
       <HomePage />
-    </div>
   )
 }
 
