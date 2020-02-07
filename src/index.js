@@ -6,13 +6,13 @@ import App from './App'
 import './globals.scss'
 
 
-let app = (
+const app = (
   <BrowserRouter>
     <App />
   </BrowserRouter>
 )
 
-let root = document.getElementById("root");
+const root = document.getElementById("root");
 
 render(app, root)
 
