@@ -12,11 +12,7 @@ const app = (
   </BrowserRouter>
 )
 
-<<<<<<< HEAD
-const root = document.getElementById("root");
-=======
 let root = document.getElementById('root')
->>>>>>> 3_forms_and_components
 
 render(app, root)
 
