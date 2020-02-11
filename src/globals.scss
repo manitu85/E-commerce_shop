@@ -14,8 +14,8 @@ html {
 
 body {
     box-sizing: border-box; 
-    // font-family: 'Courier New', Courier, monospace;
     font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 1.6;
     background-color: #fafafa;
     padding: 3% 5%;
 }
@@ -31,4 +31,8 @@ h3 { font-size: 2.4em; }
 h4 { font-size: 1.8em; }
 h5 { font-size: 1.4em; }
 h6 { font-size: 1.2em; }
+
+// p {
+//  font-family: 'Courier New', Courier, monospace;
+// }
 
