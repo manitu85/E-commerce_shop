@@ -27,7 +27,7 @@ class App extends Component {
               ...snapShot.data()
             }
           }, () => {
-            console.log(this.state)  // callback for sync state
+            console.log(this.state)  // callback for sync state, delete in the end. Don't forget.
             }  
           )
         })
