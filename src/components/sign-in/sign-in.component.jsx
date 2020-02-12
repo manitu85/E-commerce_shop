@@ -32,7 +32,7 @@ export class SignIn extends Component {
   render() {
     return (
       <div className='sign-in' >
-        <h2>I already have an account</h2>
+        <h2 className='title'>I already have an account</h2>
         <h4 style={{ color: '#7c7c7c',fontWeight: 300, marginBottom: '2rem'}} >Sign in with your email</h4>
 
         <form onSubmit={this.handleSubmit} >
