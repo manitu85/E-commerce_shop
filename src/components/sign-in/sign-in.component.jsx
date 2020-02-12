@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { auth, signInWithGoogle } from '../../firebase/firebase.init';
+
+import { auth, signInWithGoogle } from '../../firebase/firebase.init'
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 
 import './sign-in.style.scss'
-
 
 export class SignIn extends Component {
 
@@ -23,9 +23,9 @@ export class SignIn extends Component {
         email: '',
         password: ''
       })
-      
+
     } catch(error) {
-      console.log(error);
+      console.log(error)
     }
 
     
