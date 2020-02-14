@@ -1,19 +1,21 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import {Provider} from 'react-redux'
 
+import store from './redux/store'
 import App from './App'
 import './globals.scss'
 
 
 const app = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store} >
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 )
 
-let root = document.getElementById('root')
-
-render(app, root)
+render(app, document.getElementById('root'))
 
 
