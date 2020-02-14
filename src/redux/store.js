@@ -1,10 +1,19 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose  } from 'redux'
 import logger from 'redux-logger'
 import rootReducer from './root-reducer'
 
+// Setup redux devtool
+const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose
 
+// Middleware
 const middlewares = [logger]
 
-const store = createStore(rootReducer, applyMiddleware(...middlewares))
+// Create store
+const store = createStore(
+  rootReducer, 
+  composeEnhancers(applyMiddleware(...middlewares))
+)
 
 export default store
+
+
