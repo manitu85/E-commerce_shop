@@ -12,6 +12,11 @@
   z-index: 5;
   transition: all .5s ease-out;
 
+  .empty-message {
+    font-size: 2.5rem;
+    margin: 6rem auto;
+  }
+
   .cart-items {
     height: 240px;
     display: flex;
