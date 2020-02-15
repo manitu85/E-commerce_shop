@@ -43,7 +43,7 @@ class App extends Component {
     const { currentUser } = this.props
     console.log(currentUser);
     return (
-      <>
+      <div className='container'>
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
@@ -55,7 +55,7 @@ class App extends Component {
               : <SignInAndSignUpPage />
           } />
         </Switch>
-      </>
+      </div>
     )
   }
 }

@@ -1,63 +1,32 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
 import MenuItem from '../menu-item/menu-item.component'
+import { selectDirectorySection } from '../../redux/directory/directory.selectors'
+
 import './directory.styles.scss'
 
-export class Directory extends Component {
-  state = {
-    sections: [
-      {
-        title: 'hats',
-        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-        id: 1,
-        // linkUrl: 'shop/hats'
-        linkUrl: 'hats'
-      },
-      {
-        title: 'jackets',
-        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-        id: 2,
-        // linkUrl: 'shop/jackets'
-        linkUrl: ''
-      },
-      {
-        title: 'sneakers',
-        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-        id: 3,
-        // linkUrl: 'shop/sneakers'
-        linkUrl: ''
-      },
-      {
-        title: 'women\'s',
-        imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-        size: 'large',
-        id: 4,
-        // linkUrl: 'shop/women's'
-        linkUrl: ''
-      },
-      {
-        title: 'mens',
-        imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-        size: 'large',
-        id: 5,
-        // linkUrl: 'shop/mens'
-        linkUrl: ''
-      }
-    ]
-  }
+const Directory = ({ sections }) => {
+ 
+  let menuItemSection = sections.map(({ id, ...otherProps }) => (
+    <MenuItem 
+      key={id} 
+      {...otherProps}
+    />
+  ))
 
-  render() {
-    let sections = this.state.sections.map(({ id, ...otherProps }) => (
-      <MenuItem 
-        key={id} 
-        {...otherProps}
-      />
-    ))
-
-    return <div className='directory-menu'>{sections}</div>
-  }
+  return <div className='directory-menu'>{menuItemSection}</div>
 }
 
-export default Directory
+const mapStateToProps = createStructuredSelector({
+  sections: selectDirectorySection
+})
+
+// const mapStateToProps = state => ({
+//   sections: state.directory.sections
+// })
+
+export default connect(mapStateToProps)(Directory)
 
 
