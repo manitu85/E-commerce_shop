@@ -11,6 +11,9 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { auth, createUserProfileDocument } from './firebase/firebase.init'
 import { setCurrentUser } from './redux/user/user.action'
 import { selectCurrentUser } from './redux/user/user.selectors'
+import Container from './container.styles'
+import GlobalStyle from './global.styles'
+
 
 class App extends Component {
  
@@ -43,7 +46,8 @@ class App extends Component {
     const { currentUser } = this.props
     console.log(currentUser);
     return (
-      <div className='container'>
+      <Container>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
@@ -55,7 +59,7 @@ class App extends Component {
               : <SignInAndSignUpPage />
           } />
         </Switch>
-      </div>
+      </Container>
     )
   }
 }

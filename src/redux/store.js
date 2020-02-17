@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'development'){
   middlewares.push(logger)
 }
 
+
 // Create store
 const store = createStore(
   rootReducer, 

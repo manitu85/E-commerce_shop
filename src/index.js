@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from './redux/store'
 import App from './App'
 
-import './globals.scss'
+// import './globals.scss'
 
 
 const app = (
