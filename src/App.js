@@ -11,8 +11,8 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { auth, createUserProfileDocument } from './firebase/firebase.init'
 import { setCurrentUser } from './redux/user/user.action'
 import { selectCurrentUser } from './redux/user/user.selectors'
-import Container from './container.styles'
-import GlobalStyle from './global.styles'
+import Container from './components/global-styled/container.styles'
+import GlobalStyle from './components/global-styled/global.styles'
 
 
 class App extends Component {

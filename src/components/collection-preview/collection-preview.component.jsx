@@ -1,7 +1,8 @@
 import React from 'react'
 import CollectionItem from '../collection-item/collection-item.component'
+import CollectionPreviewContainer from './collection-preview.styles'
 
-import './collection-preview.styles.scss'
+// import './collection-preview.styles.scss'
 
 
 const CollectionPreview = ({ title, items }) => {
@@ -13,12 +14,12 @@ const CollectionPreview = ({ title, items }) => {
     ))
 
   return (
-    <div className='collection-preview'>
+    <CollectionPreviewContainer>
       <h1 className='title' >{title.toUpperCase()}</h1>
       <div className='preview' >
         { previewItems }
       </div>
-    </div>
+    </CollectionPreviewContainer>
   )
 }
 

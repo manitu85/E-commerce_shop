@@ -1,4 +1,6 @@
-.menu-item {
+import styled from 'styled-components'
+
+const MenuItemContainer = styled.div`
   min-width: 30%;
   height: 35rem;
   flex: 1 1 auto;
@@ -13,15 +15,15 @@
   &:hover {
   cursor: pointer;
 
-  & .background-image {
-    transform: scale(1.1);
-    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-  }
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
 
-  & .content {
-    opacity: 0.9;
+    & .content {
+      opacity: 0.9;
+    }
   }
-}
 
   &.large {
     height: 40rem;
@@ -70,4 +72,6 @@
       font-size: 1.6rem;
     }
   }
-}
+`
+
+export default MenuItemContainer

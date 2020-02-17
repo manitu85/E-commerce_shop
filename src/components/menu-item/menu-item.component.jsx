@@ -1,14 +1,15 @@
 import React from "react"
 import { withRouter } from 'react-router-dom'
-import "./menu-item.styles.scss"
+
+import MenuItemContainer from "./menu-item.styles"
 
 
-const MenuItem = props => {
+const MenuItem = ({...otherProps}) => {
   
-  const { title, imageUrl, size, history, match, linkUrl } = props
+  const { title, imageUrl, size, history, match, linkUrl } = otherProps
 
   return (
-    <div 
+    <MenuItemContainer 
       className={`${size} menu-item`}
       onClick={() => history.push(`${match.url}${linkUrl}`) }
       >
@@ -22,7 +23,7 @@ const MenuItem = props => {
         <h1 className="title">{title.toUpperCase()}</h1>
         <span className="subtitle">SHOP NOW</span>
       </div>
-    </div>
+    </MenuItemContainer>
   )
 }
 
