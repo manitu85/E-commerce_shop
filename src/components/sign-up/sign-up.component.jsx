@@ -4,9 +4,7 @@ import { auth, createUserProfileDocument } from '../../firebase/firebase.init'
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 
-import './sign-up.styles.scss'
-
-
+import { SignUpContainer, SignUpTitle, SignUpSubtitle } from './sign-up.styles.jsx'
 
 export class SignUp extends Component {
 
@@ -22,7 +20,7 @@ export class SignUp extends Component {
     const { displayName, email, password, confirmPassword } = this.state
 
     if (password !== confirmPassword)  {
-     alert("password don't match")
+     alert("Password don't match")
      return
     }
 
@@ -50,10 +48,9 @@ export class SignUp extends Component {
 
     const { displayName, email, password, confirmPassword } = this.state
     return (
-      <div className='sign-up' >
-        <h2 className='title'>I do not have a account</h2>
-        <h4 style={{ color: '#7c7c7c', fontWeight: 300, marginBottom: '2rem' }}>Sign up with your email and password</h4>
-
+      <SignUpContainer>
+        <SignUpTitle className='title'>I do not have a account</SignUpTitle>
+        <SignUpSubtitle style={{ }}>Sign up with your email and password</SignUpSubtitle> 
         <form onSubmit={this.handleSubmit} className='sign-up-form'>
           <label><h5>Dispaly Name</h5></label>
           <FormInput
@@ -92,7 +89,7 @@ export class SignUp extends Component {
           />
           <CustomButton type='submit'>SIGN UP</CustomButton>
         </form>
-      </div>
+      </SignUpContainer>
     )
   }
 }

@@ -5,44 +5,52 @@ import { createStructuredSelector } from 'reselect'
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors'
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component'
 import CheckoutItem from '../../components/checkout-item/checkout-item.component'
-import './checkout.styles.scss'
+
+import { 
+  CheckoutPageContainer, 
+  CheckoutHeader, 
+  HeaderBlock, 
+  TotalContainer, 
+  TestWarning 
+} from './checkout.styles'
+
 
 const CheckoutPage = ({cartItems, total}) => (
-  <div className='checkout-page' >
-    <div className='checkout-header'>
-      <div className='header-block'>
+  <CheckoutPageContainer >
+    <CheckoutHeader>
+      <HeaderBlock>
         <span>Product</span>
-      </div>
-      <div className='header-block'>
+      </HeaderBlock>
+      <HeaderBlock>
         <span>Description</span>
-      </div>
-      <div className='header-block'>
+      </HeaderBlock>
+      <HeaderBlock>
         <span>Quantity</span>
-      </div>
-      <div className='header-block'>
+      </HeaderBlock>
+      <HeaderBlock>
         <span>Price</span>
-      </div>
-      <div className='header-block'>
+      </HeaderBlock>
+      <HeaderBlock>
         <span>Remove</span>
-      </div>
-    </div>
+      </HeaderBlock>
+    </CheckoutHeader>
     {
       cartItems.map(cartItem =>
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       )
     }
-    <div className='total'>
+    <TotalContainer>
       <span> TOTAL: ${total.toFixed(2)} </span>
-    </div>
+    </TotalContainer>
     <StripeCheckoutButton price={total} />
-    <div className='test-warning'>
+    <TestWarning>
       * Please use following test credit card for payment *
       <br/>
       Master Card - 5555 5555 5555 4444 - Exp: 03/25 - CVV: 123 
       <br/>
       Visa - 4242 4242 4242 4242 - Exp: 03/22 - CVV: 456 
-    </div>
-  </div> 
+    </TestWarning>
+  </CheckoutPageContainer> 
 )
 
 
