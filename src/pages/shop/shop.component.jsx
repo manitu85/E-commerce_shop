@@ -39,12 +39,14 @@ export class ShopPage extends Component {
           exact
           path={`${match.path}`}
           render={(props => <CollectionsOverviewWithSpinner isLoading={loading} {...props} />
-          )} />
+          )} 
+        />
         <Route
           exact
           path={`${match.path}/:collectionId`}
           render={(props => <CollectionPageWithSpinner isLoading={loading} {...props} />
-          )} />
+          )} 
+        />
       </div>
     )
   }
