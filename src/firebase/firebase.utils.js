@@ -14,9 +14,12 @@ export const firestore = firebase.firestore()
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if(!userAuth) return
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`)
+  const userRef = firestore.doc(`users/${userAuth.uid}`)  // documentRef object
   const snapShot = await userRef.get()  // query documentRef object
 
+  // const collectionRef = firestore.collection('users')
+  // const collectionSnapshot = await collectionRef.get()
+  
   if(!snapShot.exists) {
     const { displayName, email } = userAuth
     const createAt = new Date()
@@ -37,6 +40,39 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef
 }
 
+
+// Add collection_data to firestore db
+export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
+  const collectionRef = firestore.collection(collectionKey)
+
+  const batch = firestore.batch()
+  objectToAdd.forEach( obj => {
+    const newDocRef = collectionRef.doc()
+    batch.set(newDocRef, obj)
+  })
+
+  return await batch.commit()
+}
+
+// Convert snapshot collections to arr of obj's maps
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformCollections = collections.docs.map(doc => {
+    const { title, items } = doc.data()
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    }
+  })
+
+ return transformCollections.reduce((acc, collection) => {
+    acc[collection.title.toLowerCase()]  = collection
+    return acc
+  } ,{})
+  
+}
 
 // Google Provider Auth
 const provider = new firebase.auth.GoogleAuthProvider()
