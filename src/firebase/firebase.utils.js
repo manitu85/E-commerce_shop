@@ -71,12 +71,22 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     acc[collection.title.toLowerCase()]  = collection
     return acc
   } ,{})
-  
+
+}
+
+// Check current user
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe()
+      resolve(userAuth)
+    }, reject)
+  })
 }
 
 // Google Provider Auth
-const provider = new firebase.auth.GoogleAuthProvider()
-provider.setCustomParameters({ prompt: 'select_account' })
-export const signInWithGoogle = () => auth.signInWithPopup(provider)
+export const goggleProvider = new firebase.auth.GoogleAuthProvider()
+goggleProvider.setCustomParameters({ prompt: 'select_account' })
+export const signInWithGoogle = () => auth.signInWithPopup(goggleProvider)
 
 export default firebase 

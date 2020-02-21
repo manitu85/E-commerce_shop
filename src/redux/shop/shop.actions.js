@@ -16,7 +16,7 @@ export const fetchCollectionsFail = errorMessage => ({
   payload: errorMessage
 })
 
-// Async function to detect redux-thun
+// Async function to detect redux-thunk
 // export const fetchCollectionsStartAsync = () => {
 //   return dispatch => {
 //     const collectionRef = firestore.collection('collections')

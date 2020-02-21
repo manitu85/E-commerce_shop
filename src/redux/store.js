@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware, compose  } from 'redux'
-import logger from 'redux-logger'
 import  { persistStore } from 'redux-persist'
+import logger from 'redux-logger'
+import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk'
 
 import rootReducer from './root-reducer'
-import createSagaMiddleware from 'redux-saga'
 import rootSaga from './root-saga'
 
 // NODE environmental variable
