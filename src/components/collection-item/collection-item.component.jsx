@@ -14,6 +14,7 @@ import {
 
 
 const CollectionItem = ({ item, addItem }) => {
+  
   const { imageUrl, name, price } = item
 
   return (
