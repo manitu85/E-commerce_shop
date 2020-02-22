@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # secret key
-client/src/firebase/firebase.config.js
+# client/src/firebase/firebase.config.js
 
 # dependencies
 /node_modules
