@@ -3,9 +3,6 @@
 # secret key
 src/firebase/firebase.config.js
 
-# personal
-notes.md
-
 # dependencies
 /node_modules
 /.pnp
