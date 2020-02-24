@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: #fafafa;
     padding: 3% 5%;
     justify-content: end;
+
+    @media screen and (max-width: 800px) {
+      padding: 1rem;
+    }
   }
 
   a {

@@ -5,7 +5,7 @@ export const CollectionItemContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 35rem;
   align-items: center;
   position: relative;
   &:hover {
@@ -17,6 +17,18 @@ export const CollectionItemContainer = styled.div`
       display: flex;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    width: 80vw;
+     &:hover {
+    .image {
+      opacity: unset;
+    }
+    button {
+      opacity: unset;
+    }
+  }
+  }
 `;
 
 export const AddButton = styled(CustomButton)`
@@ -25,6 +37,13 @@ export const AddButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
+
+  @media screen and (max-width: 800px ) {
+    display: block;
+    opacity: .9;
+    min-width: unset;
+    padding: 0 1rem;
+  } 
 `;
 
 export const BackgroundImage = styled.div`

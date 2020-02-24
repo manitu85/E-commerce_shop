@@ -18,7 +18,7 @@ import GlobalStyle from './components/global-styled/global.styles'
 
 const App = ({ currentUser, checkUserSession }) => {
  
-  // componentDidMount
+  // componentDidMountP
   useEffect(() => {
     checkUserSession()
   }, [checkUserSession])
