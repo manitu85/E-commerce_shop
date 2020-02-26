@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const CollectionPageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: strech; */
 
   @media screen and (max-width: 500px) {
     align-items: center;
