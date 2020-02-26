@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions'
 
 import Spinner from '../../components/spinner/spinner.components'
-// import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container'
-// import CollectionsPageContainer from '../collection/collection.container'
 
 
 const CollectionsOverviewContainer = lazy(() => import('../../components/collections-overview/collections-overview.container'))

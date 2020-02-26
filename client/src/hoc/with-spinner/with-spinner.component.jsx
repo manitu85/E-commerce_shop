@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Spinner from '../components/spinner/spinner.components'
+import Spinner from '../../components/spinner/spinner.components'
 
 
 const WithSpinner = WrappedComponent => 

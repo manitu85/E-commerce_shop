@@ -3,7 +3,7 @@ import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
 
 import { selectCollectionIsLoaded } from '../../redux/shop/shop.selectors'
-import WithSpinner from '../../hoc/with-spinner.component'
+import WithSpinner from '../../hoc/with-spinner/with-spinner.component'
 import CollectionPage from './collection.component'
 
 
