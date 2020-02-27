@@ -1,21 +1,26 @@
 {
-  "short_name": "Crown",
-  "name": "Crown e-shop app",
+  "short_name": "Crown-Clothing",
+  "name": "Crown Manitux Ltd.",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "32x32 16x16",
+      "sizes": "48x48",
       "type": "image/x-icon"
     },
     {
-      "src": "/android-chrome-192x192.png",
+      
+      "src": "/android-crwn-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-crwn-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/apple-touch-crwn.png",
+      "sizes": "180x180",
       "type": "image/png"
     }
   ],
