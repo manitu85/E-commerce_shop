@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 if (process.env.NODE_ENV === 'production') {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
   app.use(express.static(path.join(__dirname, 'client/build')));
 
   app.get('*', function(req, res) {
@@ -29,6 +30,10 @@ app.listen(port, error => {
   if(error) throw error;
   console.log(`Server running on port ${port}`);
 })
+
+app.get('/serviceWorker.js', (res, req) => {
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'serviceWorker.js'));
+});
 
 // Route payment
 app.post('/payment', (req, res) => {
@@ -46,3 +51,5 @@ app.post('/payment', (req, res) => {
     }
   });
 });
+
+
