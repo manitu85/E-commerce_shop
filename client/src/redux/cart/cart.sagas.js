@@ -32,6 +32,7 @@ export function* checkCartFromFirebase({ payload: user }) {
   yield put(setCartFromFirebase(cartSnapshot.data().cartItems))
 }
 
+
 export function* onSignOutSuccess () {
   yield takeLatest(userActionTypes.SIGN_OUT_SUCCESS, clearCartOnSignOut)
 }
