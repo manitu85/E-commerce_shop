@@ -14,8 +14,6 @@ const CollectionsOverview = ({ collections }) => {
     <CollectionPreview key={id} {...otherCollectionsProps} />
   ))
 
-  console.log(shopCollectionsOverview);
-
   return (
     <CollectionsOverviewContainer>
       { shopCollectionsOverview }
@@ -27,8 +25,5 @@ const mapStateToProps = createStructuredSelector({
   collections: selectCollectionsForPreview
 })
 
-// const mapStateToProps = state => ({
-//   collections: state.shop.collections
-// })
 
 export default connect(mapStateToProps)(CollectionsOverview)
