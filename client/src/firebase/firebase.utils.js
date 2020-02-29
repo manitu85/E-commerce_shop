@@ -37,7 +37,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef
 }
 
-// User cart refs
+// Add user cart to firestore
 export const getUserCartRef = async userId => {
   const cartsRef = firestore.collection('carts').where('userId', '==', userId)
   console.log('cartsRef :', cartsRef)
@@ -53,7 +53,7 @@ export const getUserCartRef = async userId => {
 }
 
 
-// Add collection_data to firestore db
+// Add collection-data to firestore db
 export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
   const collectionRef = firestore.collection(collectionKey)
 
